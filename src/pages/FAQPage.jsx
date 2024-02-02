@@ -36,7 +36,7 @@ const Faq = () => {
             onClick={() => toggleTab(2)}
           >
             <span className="text-lg font-medium text-gray-900">
-              What is your return policy?
+              Apakah saya bisa membatalkan pesanan saya?
             </span>
             {activeTab === 2 ? (
               <svg
@@ -71,10 +71,10 @@ const Faq = () => {
           {activeTab === 2 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                If you're not satisfied with your purchase, we accept returns
-                within 30 days of delivery. To initiate a return, please email
-                us at support@myecommercestore.com with your order number and a
-                brief explanation of why you're returning the item.
+                Maaf, setelah pesanan ditempatkan, kami tidak dapat membuat
+                perubahan atau pembatalan. Jika Anda tidak lagi menginginkan
+                barang yang Anda pesan, Anda dapat mengembalikannya untuk
+                pengembalian dana dalam waktu 30 hari setelah pengiriman.
               </p>
             </div>
           )}
@@ -86,7 +86,7 @@ const Faq = () => {
             onClick={() => toggleTab(3)}
           >
             <span className="text-lg font-medium text-gray-900">
-              How do I track my order?
+              Bagaimana cara melacak pesanan saya?
             </span>
             {activeTab === 3 ? (
               <svg
@@ -121,9 +121,10 @@ const Faq = () => {
           {activeTab === 3 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                You can track your order by clicking the tracking link in your
-                shipping confirmation email, or by logging into your account on
-                our website and viewing the order details.
+                Setelah pesanan Anda dikirim, Anda akan menerima email
+                konfirmasi pengiriman dengan nomor pelacakan pesanan Anda. Anda
+                dapat menggunakan nomor ini untuk melacak pesanan Anda melalui
+                situs web kurir.
               </p>
             </div>
           )}
@@ -135,7 +136,7 @@ const Faq = () => {
             onClick={() => toggleTab(4)}
           >
             <span className="text-lg font-medium text-gray-900">
-              How do I contact customer support?
+              Bagaimana cara menghubungi layanan pelanggan?
             </span>
             {activeTab === 4 ? (
               <svg
@@ -170,9 +171,7 @@ const Faq = () => {
           {activeTab === 4 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                You can contact our customer support team by emailing us at
-                support@myecommercestore.com, or by calling us at (555) 123-4567
-                between the hours of 9am and 5pm EST, Monday through Friday.
+                Anda dapat menghubungi layanan pelanggan kami melalui email
               </p>
             </div>
           )}
@@ -184,7 +183,7 @@ const Faq = () => {
             onClick={() => toggleTab(5)}
           >
             <span className="text-lg font-medium text-gray-900">
-              Can I change or cancel my order?
+              Apakah saya bisa membatalkan pesanan saya?
             </span>
             {activeTab === 5 ? (
               <svg
@@ -219,57 +218,10 @@ const Faq = () => {
           {activeTab === 5 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                Unfortunately, once an order has been placed, we are not able to
-                make changes or cancellations. If you no longer want the items
-                you've ordered, you can return them for a refund within 30 days
-                of delivery.
-              </p>
-            </div>
-          )}
-        </div>
-
-        <div className="border-b border-gray-200 pb-4">
-          <button
-            className="flex items-center justify-between w-full"
-            onClick={() => toggleTab(6)}
-          >
-            <span className="text-lg font-medium text-gray-900">
-              Do you offer international shipping?
-            </span>
-            {activeTab === 6 ? (
-              <svg
-                className="h-6 w-6 text-gray-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="h-6 w-6 text-gray-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            )}
-          </button>
-          {activeTab === 6 && (
-            <div className="mt-4">
-              <p className="text-base text-gray-500">
-                Currently, we only offer shipping within the United States.
+                Maaf, setelah pesanan ditempatkan, kami tidak dapat membuat
+                perubahan atau pembatalan. Jika Anda tidak lagi menginginkan
+                barang yang Anda pesan, Anda dapat mengembalikannya untuk
+                pengembalian dana dalam waktu 30 hari setelah pengiriman.
               </p>
             </div>
           )}
@@ -281,7 +233,7 @@ const Faq = () => {
             onClick={() => toggleTab(7)}
           >
             <span className="text-lg font-medium text-gray-900">
-              What payment methods do you accept?
+              Apa metode pembayaran yang diterima?
             </span>
             {activeTab === 7 ? (
               <svg
@@ -316,8 +268,7 @@ const Faq = () => {
           {activeTab === 7 && (
             <div className="mt-4">
               <p className="text-base text-gray-500">
-                We accept visa,mastercard,paypal payment method also we have
-                cash on delivery system.
+                Kami menerima semua kartu kredit dan debit utama, serta QRIS.
               </p>
             </div>
           )}
