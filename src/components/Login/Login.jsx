@@ -27,7 +27,7 @@ const Login = () => {
       .then((res) => {
         toast.success("Login Success!");
         navigate("/");
-        window.location.reload(true); 
+        window.location.reload(true);
       })
       .catch((err) => {
         toast.error(err.response.data.message);
@@ -38,7 +38,7 @@ const Login = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Login to your account
+          Login
         </h2>
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -49,7 +49,7 @@ const Login = () => {
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700"
               >
-                Email address
+                Email
               </label>
               <div className="mt-1">
                 <input
@@ -112,10 +112,10 @@ const Login = () => {
               </div>
               <div className="text-sm">
                 <a
-                  href=".forgot-password"
+                  href="/forgot-password"
                   className="font-medium text-blue-600 hover:text-blue-500"
                 >
-                  Forgot your password?
+                  Lupa Password
                 </a>
               </div>
             </div>
@@ -124,13 +124,13 @@ const Login = () => {
                 type="submit"
                 className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
               >
-                Submit
+                Login
               </button>
             </div>
             <div className={`${styles.noramlFlex} w-full`}>
-              <h4>Not have any account?</h4>
+              <h4>Tidak punya akun?</h4>
               <Link to="/sign-up" className="text-blue-600 pl-2">
-                Sign Up
+                Daftar Sekarang
               </Link>
             </div>
           </form>

@@ -17,7 +17,7 @@ import { useSelector } from "react-redux";
 
 const ProfileSidebar = ({ setActive, active }) => {
   const navigate = useNavigate();
- const {user} = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   const logoutHandler = () => {
     axios
       .get(`${server}/user/logout`, { withCredentials: true })
@@ -32,6 +32,52 @@ const ProfileSidebar = ({ setActive, active }) => {
   };
   return (
     <div className="w-full bg-white shadow-sm rounded-[10px] p-4 pt-8">
+      {user && user?.role === "Admin" && (
+        <>
+          <Link to="/admin/dashboard">
+            <div
+              className="flex items-center cursor-pointer w-full mb-8"
+              onClick={() => setActive(8)}
+            >
+              <MdOutlineAdminPanelSettings
+                size={20}
+                color={active === 7 ? "red" : ""}
+              />
+              <span
+                className={`pl-3 ${
+                  active === 8 ? "text-[red]" : ""
+                } 800px:block hidden`}
+              >
+                Admin Dashboard
+              </span>
+            </div>
+          </Link>
+          <hr className="mb-5"></hr>
+        </>
+      )}
+      {user && user?.role === "marketing" && (
+        <>
+          <Link to="/marketing/dashboard">
+            <div
+              className="flex items-center cursor-pointer w-full mb-8"
+              onClick={() => setActive(8)}
+            >
+              <MdOutlineAdminPanelSettings
+                size={20}
+                color={active === 7 ? "red" : ""}
+              />
+              <span
+                className={`pl-3 ${
+                  active === 8 ? "text-[red]" : ""
+                } 800px:block hidden`}
+              >
+                Marketing Dashboard
+              </span>
+            </div>
+          </Link>
+          <hr className="mb-5"></hr>
+        </>
+      )}
       <div
         className="flex items-center cursor-pointer w-full mb-8"
         onClick={() => setActive(1)}
@@ -42,7 +88,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 1 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Profile
+          Profil
         </span>
       </div>
       <div
@@ -55,10 +101,10 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 2 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Orders
+          Pesanan
         </span>
       </div>
-      <div
+      {/* <div
         className="flex items-center cursor-pointer w-full mb-8"
         onClick={() => setActive(3)}
       >
@@ -70,7 +116,7 @@ const ProfileSidebar = ({ setActive, active }) => {
         >
           Refunds
         </span>
-      </div>
+      </div> */}
 
       <div
         className="flex items-center cursor-pointer w-full mb-8"
@@ -82,7 +128,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 4 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Inbox
+          Kotak Masuk
         </span>
       </div>
 
@@ -96,7 +142,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 5 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Track Order
+          Lacak Order
         </span>
       </div>
 
@@ -110,7 +156,7 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 6 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Change Password
+          Lupa Password
         </span>
       </div>
 
@@ -124,30 +170,9 @@ const ProfileSidebar = ({ setActive, active }) => {
             active === 7 ? "text-[red]" : ""
           } 800px:block hidden`}
         >
-          Address
+          Alamat
         </span>
       </div>
-
-      {user && user?.role === "Admin" && (
-        <Link to="/admin/dashboard">
-          <div
-            className="flex items-center cursor-pointer w-full mb-8"
-            onClick={() => setActive(8)}
-          >
-            <MdOutlineAdminPanelSettings
-              size={20}
-              color={active === 7 ? "red" : ""}
-            />
-            <span
-              className={`pl-3 ${
-                active === 8 ? "text-[red]" : ""
-              } 800px:block hidden`}
-            >
-              Admin Dashboard
-            </span>
-          </div>
-        </Link>
-      )}
       <div
         className="single_item flex items-center cursor-pointer w-full mb-8"
         onClick={logoutHandler}

@@ -23,7 +23,7 @@ const EventCard = ({ active, data }) => {
         toast.success("Item added to cart successfully!");
       }
     }
-  }
+  };
   return (
     <div
       className={`w-full block bg-white rounded-lg ${
@@ -39,10 +39,10 @@ const EventCard = ({ active, data }) => {
         <div className="flex py-2 justify-between">
           <div className="flex">
             <h5 className="font-[500] text-[18px] text-[#d55b45] pr-3 line-through">
-              {data.originalPrice}$
+              Rp.{data.originalPrice}
             </h5>
             <h5 className="font-bold text-[20px] text-[#333] font-Roboto">
-              {data.discountPrice}$
+              Rp.{data.discountPrice}
             </h5>
           </div>
           <span className="pr-3 font-[400] text-[17px] text-[#44a55e]">
@@ -53,9 +53,14 @@ const EventCard = ({ active, data }) => {
         <br />
         <div className="flex items-center">
           <Link to={`/product/${data._id}?isEvent=true`}>
-            <div className={`${styles.button} text-[#fff]`}>See Details</div>
+            <div className={`${styles.button} text-[#fff]`}>detail ptroduk</div>
           </Link>
-          <div className={`${styles.button} text-[#fff] ml-5`} onClick={() => addToCartHandler(data)}>Add to cart</div>
+          <div
+            className={`${styles.button} text-[#fff] ml-5`}
+            onClick={() => addToCartHandler(data)}
+          >
+            Tambah ke keranjang
+          </div>
         </div>
       </div>
     </div>

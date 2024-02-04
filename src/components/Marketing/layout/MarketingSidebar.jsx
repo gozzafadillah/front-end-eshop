@@ -1,15 +1,15 @@
 import React from "react";
+import { AiOutlineSetting } from "react-icons/ai";
+import { BsHandbag } from "react-icons/bs";
+import { CiMoneyBill } from "react-icons/ci";
 import { FiShoppingBag } from "react-icons/fi";
 import { GrWorkshop } from "react-icons/gr";
-import { RxDashboard } from "react-icons/rx";
-import { CiMoneyBill, CiSettings } from "react-icons/ci";
-import { Link } from "react-router-dom";
 import { HiOutlineUserGroup } from "react-icons/hi";
-import { BsHandbag } from "react-icons/bs";
 import { MdOutlineLocalOffer } from "react-icons/md";
-import { AiOutlineSetting } from "react-icons/ai";
+import { RxDashboard } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
-const AdminSideBar = ({ active }) => {
+const MarketingSidebar = ({ active }) => {
   return (
     <div className="w-full h-[90vh] bg-white shadow-sm overflow-y-scroll sticky top-0 left-0 z-10">
       {/* single item */}
@@ -30,7 +30,7 @@ const AdminSideBar = ({ active }) => {
       </div>
 
       <div className="w-full flex items-center p-4">
-        <Link to="/admin-orders" className="w-full flex items-center">
+        <Link to="/data-kriteria" className="w-full flex items-center">
           <FiShoppingBag
             size={30}
             color={`${active === 2 ? "crimson" : "#555"}`}
@@ -40,13 +40,13 @@ const AdminSideBar = ({ active }) => {
               active === 2 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Semua Pesanan
+            Data Kriteria
           </h5>
         </Link>
       </div>
 
       <div className="w-full flex items-center p-4">
-        <Link to="/admin-sellers" className="w-full flex items-center">
+        <Link to="/sub-data-kriteria" className="w-full flex items-center">
           <GrWorkshop
             size={30}
             color={`${active === 3 ? "crimson" : "#555"}`}
@@ -56,13 +56,13 @@ const AdminSideBar = ({ active }) => {
               active === 3 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Semua Marketing
+            Data Sub Kriteria
           </h5>
         </Link>
       </div>
 
       <div className="w-full flex items-center p-4">
-        <Link to="/admin-users" className="w-full flex items-center">
+        <Link to="/data-alternatif" className="w-full flex items-center">
           <HiOutlineUserGroup
             size={30}
             color={`${active === 4 ? "crimson" : "#555"}`}
@@ -72,55 +72,23 @@ const AdminSideBar = ({ active }) => {
               active === 4 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Semua Users
+            Data Alternatif
           </h5>
         </Link>
       </div>
 
       <div className="w-full flex items-center p-4">
-        <Link to="/admin-products" className="w-full flex items-center">
+        <Link to="/data-penilaian" className="w-full flex items-center">
           <BsHandbag size={30} color={`${active === 5 ? "crimson" : "#555"}`} />
           <h5
             className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
               active === 5 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Semua Produk
+            Data Penilaian
           </h5>
         </Link>
       </div>
-
-      <div className="w-full flex items-center p-4">
-        <Link to="/admin-events" className="w-full flex items-center">
-          <MdOutlineLocalOffer
-            size={30}
-            color={`${active === 6 ? "crimson" : "#555"}`}
-          />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 6 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            Semua Promosi
-          </h5>
-        </Link>
-      </div>
-
-      {/* <div className="w-full flex items-center p-4">
-        <Link to="/admin-withdraw-request" className="w-full flex items-center">
-          <CiMoneyBill
-            size={30}
-            color={`${active === 7 ? "crimson" : "#555"}`}
-          />
-          <h5
-            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
-              active === 7 ? "text-[crimson]" : "text-[#555]"
-            }`}
-          >
-            Withdraw Request
-          </h5>
-        </Link>
-      </div> */}
 
       <div className="w-full flex items-center p-4">
         <Link to="/profile" className="w-full flex items-center">
@@ -141,4 +109,4 @@ const AdminSideBar = ({ active }) => {
   );
 };
 
-export default AdminSideBar;
+export default MarketingSidebar;

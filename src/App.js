@@ -44,7 +44,7 @@ import {
   AdminDashboardOrders,
   AdminDashboardProducts,
   AdminDashboardEvents,
-  AdminDashboardWithdraw
+  AdminDashboardWithdraw,
 } from "./routes/AdminRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -60,6 +60,13 @@ import axios from "axios";
 import { server } from "./server";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import MarketingDashboardPages from "./pages/MarketingDashboardPages.jsx";
+import MarketingDataKriteria from "./pages/MarketingDataKriteria.jsx";
+import MarketingDataPenilaian from "./pages/MarketingDataPenilaian.jsx";
+import MarketingSubKriteria from "./pages/MarketingSubKriteria.jsx";
+import MarketingDataAlternatif from "./pages/MarketingDataAlternatif.jsx";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage.jsx";
+import DataPerhitungan from "./pages/DataPerhitungan.jsx";
 
 const App = () => {
   const [stripeApikey, setStripeApiKey] = useState("");
@@ -81,6 +88,22 @@ const App = () => {
       {stripeApikey && (
         <Elements stripe={loadStripe(stripeApikey)}>
           <Routes>
+            <Route path="/marketing" element={<MarketingDashboardPages />} />
+            <Route path="/data-kriteria" element={<MarketingDataKriteria />} />
+            <Route
+              path="/sub-data-kriteria"
+              element={<MarketingSubKriteria />}
+            />
+            <Route
+              path="/data-penilaian"
+              element={<MarketingDataPenilaian />}
+            />
+            <Route
+              path="/data-alternatif"
+              element={<MarketingDataAlternatif />}
+            />
+            <Route path="/data-perhitungan" element={<DataPerhitungan />} />
+
             <Route
               path="/payment"
               element={
@@ -96,6 +119,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignupPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route
           path="/activation/:activation_token"
           element={<ActivationPage />}
@@ -292,7 +316,7 @@ const App = () => {
             </ProtectedAdminRoute>
           }
         />
-         <Route
+        <Route
           path="/admin-products"
           element={
             <ProtectedAdminRoute>
@@ -300,7 +324,7 @@ const App = () => {
             </ProtectedAdminRoute>
           }
         />
-         <Route
+        <Route
           path="/admin-events"
           element={
             <ProtectedAdminRoute>
@@ -308,7 +332,7 @@ const App = () => {
             </ProtectedAdminRoute>
           }
         />
-         <Route
+        <Route
           path="/admin-withdraw-request"
           element={
             <ProtectedAdminRoute>
