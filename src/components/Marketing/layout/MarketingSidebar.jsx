@@ -1,12 +1,13 @@
 import React from "react";
 import { AiOutlineSetting } from "react-icons/ai";
-import { BsHandbag } from "react-icons/bs";
-import { CiMoneyBill } from "react-icons/ci";
 import { FiShoppingBag } from "react-icons/fi";
 import { GrWorkshop } from "react-icons/gr";
-import { HiOutlineUserGroup } from "react-icons/hi";
-import { MdOutlineLocalOffer } from "react-icons/md";
-import { RxDashboard } from "react-icons/rx";
+import {
+  HiDatabase,
+  HiOutlineArchive,
+  HiOutlineCalculator,
+  HiOutlineChartSquareBar,
+} from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 const MarketingSidebar = ({ active }) => {
@@ -48,7 +49,7 @@ const MarketingSidebar = ({ active }) => {
 
       <div className="w-full flex items-center p-4">
         <Link to="/data-alternatif" className="w-full flex items-center">
-          <HiOutlineUserGroup
+          <HiDatabase
             size={30}
             color={`${active === 4 ? "crimson" : "#555"}`}
           />
@@ -64,13 +65,47 @@ const MarketingSidebar = ({ active }) => {
 
       <div className="w-full flex items-center p-4">
         <Link to="/data-penilaian" className="w-full flex items-center">
-          <BsHandbag size={30} color={`${active === 5 ? "crimson" : "#555"}`} />
+          <HiOutlineArchive
+            size={30}
+            color={`${active === 5 ? "crimson" : "#555"}`}
+          />
           <h5
             className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
               active === 5 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
             Data Penilaian
+          </h5>
+        </Link>
+      </div>
+
+      <div className="w-full flex items-center p-4">
+        <Link to="/data-perhitungan" className="w-full flex items-center">
+          <HiOutlineCalculator
+            size={30}
+            color={`${active === 6 ? "crimson" : "#555"}`}
+          />
+          <h5
+            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
+              active === 6 ? "text-[crimson]" : "text-[#555]"
+            }`}
+          >
+            Data Perhitungan
+          </h5>
+        </Link>
+      </div>
+      <div className="w-full flex items-center p-4">
+        <Link to="/data-hasil-akhir" className="w-full flex items-center">
+          <HiOutlineChartSquareBar
+            size={30}
+            color={`${active === 7 ? "crimson" : "#555"}`}
+          />
+          <h5
+            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
+              active === 7 ? "text-[crimson]" : "text-[#555]"
+            }`}
+          >
+            Data Hasil Akhir
           </h5>
         </Link>
       </div>

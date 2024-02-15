@@ -66,7 +66,8 @@ import MarketingDataPenilaian from "./pages/MarketingDataPenilaian.jsx";
 import MarketingSubKriteria from "./pages/MarketingSubKriteria.jsx";
 import MarketingDataAlternatif from "./pages/MarketingDataAlternatif.jsx";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage.jsx";
-import DataPerhitungan from "./pages/DataPerhitungan.jsx";
+import MarketingDataPerhitungan from "./pages/MarketingDataPerhitungan.jsx";
+import MarketingDataHasilAkhir from "./pages/MarketingDataHasilAkhir.jsx";
 
 const App = () => {
   const [stripeApikey, setStripeApiKey] = useState("");
@@ -102,7 +103,15 @@ const App = () => {
               path="/data-alternatif"
               element={<MarketingDataAlternatif />}
             />
-            <Route path="/data-perhitungan" element={<DataPerhitungan />} />
+            <Route
+              path="/data-perhitungan"
+              element={<MarketingDataPerhitungan />}
+            />
+
+            <Route
+              path="/data-hasil-akhir"
+              element={<MarketingDataHasilAkhir />}
+            />
 
             <Route
               path="/payment"

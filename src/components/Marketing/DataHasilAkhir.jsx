@@ -1,21 +1,17 @@
-import axios from "axios";
 import React, { useEffect } from "react";
 import { server } from "../../server";
+import axios from "axios";
 import { toast } from "react-toastify";
-import ModalPenilaian from "./layout/ModalPenilaian";
 
-const DataPenilaian = () => {
-  const [data, setData] = React.useState([]);
-  const [kriteria, setKriteria] = React.useState([]);
+const DataHasilAkhir = () => {
+  const [hasil, setHasil] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
 
   useEffect(() => {
     const fetchDataPenilaian = async () => {
       try {
         const res = await axios.get(`${server}/penilaian`);
-        setData(res.data.penilaian);
-        const dataCriteria = await axios.get(`${server}/criteria`);
-        setKriteria(dataCriteria.data.criteria);
+        setHasil(res.data.Qi);
         setLoading(false);
       } catch (error) {
         toast.error("Data gagal dimuat");
@@ -27,10 +23,9 @@ const DataPenilaian = () => {
   return (
     <>
       <div className="w-full mx-8 pt-1 mt-10 bg-white">
-        <div className="flex justify-end pt-3 px-3">
-          <ModalPenilaian loading={loading} setLoading={setLoading} />
-        </div>
-        <h1 className="text-2xl font-semibold mb-3 mx-3">Data Penilaian</h1>
+        <h1 className="text-2xl font-semibold mb-3 mx-3 mt-10">
+          Data Hasil Akhir
+        </h1>
         <table className="min-w-full divide-y divide-gray-200 shadow-md">
           <thead className="bg-gray-50">
             <tr>
@@ -46,19 +41,22 @@ const DataPenilaian = () => {
               >
                 Kode Alternatif
               </th>
-              {kriteria.map((_, index) => (
-                <th
-                  key={index}
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  C{index + 1}
-                </th>
-              ))}
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Nilai
+              </th>
+              <th
+                scope="col"
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Ranking
+              </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {data.map((item, index) => (
+            {hasil.map((item, index) => (
               <tr key={index}>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   {index + 1}
@@ -67,19 +65,10 @@ const DataPenilaian = () => {
                   {item.kode_alternatif}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {item.hasil_C1}
+                  {item.nilai}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {item.hasil_C2}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {item.hasil_C3}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {item.hasil_C4}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {item.hasil_C5}
+                  {item.ranking}
                 </td>
               </tr>
             ))}
@@ -90,4 +79,4 @@ const DataPenilaian = () => {
   );
 };
 
-export default DataPenilaian;
+export default DataHasilAkhir;
