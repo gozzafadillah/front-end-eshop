@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../../styles/styles";
-import { categoriesData, productData } from "../../static/data";
+import { categoriesData } from "../../static/data";
+import logo from "../../Assests/logo.png";
 import {
   AiOutlineHeart,
   AiOutlineSearch,
@@ -57,17 +58,26 @@ const Header = ({ activeHeading }) => {
         <div className="hidden 800px:h-[75px] 800px:my-[20px] 800px:flex items-center justify-between">
           <div>
             <Link to="/">
-              <h1
-                className="h-1 text-4xl mb-5"
-                style={{ fontWeight: "bold", color: "#cd3367" }}
-              >
-                Ayudha Event
-              </h1>
+              <div style={{ display: "flex", marginTop: "10px" }}>
+                <img
+                  style={{ width: "75px", height: "75px" }}
+                  src={logo}
+                  alt="logo"
+                />
+                <div>
+                  <h1
+                    className="h-1 text-4xl mb-5"
+                    style={{ fontWeight: "bold", color: "#cd3367" }}
+                  >
+                    Ayudha Event
+                    <span className="pt-10 text-[#000000b7] text-[14px]">
+                      Your Events, Our Expertise
+                    </span>
+                  </h1>
+                </div>
+              </div>
             </Link>
             <br />
-            <span className="text-[#000000b7] text-[14px]">
-              Your Events, Our Expertise
-            </span>
           </div>
           {/* search box */}
           <div className="w-[50%] relative">
