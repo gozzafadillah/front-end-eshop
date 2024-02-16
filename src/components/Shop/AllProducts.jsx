@@ -27,19 +27,19 @@ const AllProducts = () => {
     { field: "id", headerName: "Product Id", minWidth: 150, flex: 0.7 },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Nama",
       minWidth: 180,
       flex: 1.4,
     },
     {
       field: "price",
-      headerName: "Price",
+      headerName: "Harga",
       minWidth: 100,
       flex: 0.6,
     },
     {
       field: "Stock",
-      headerName: "Stock",
+      headerName: "Stok",
       type: "number",
       minWidth: 80,
       flex: 0.5,
@@ -47,7 +47,7 @@ const AllProducts = () => {
 
     {
       field: "sold",
-      headerName: "Sold out",
+      headerName: "Terjual",
       type: "number",
       minWidth: 130,
       flex: 0.6,

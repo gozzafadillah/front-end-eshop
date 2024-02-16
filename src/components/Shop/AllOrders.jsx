@@ -33,7 +33,7 @@ const AllOrders = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: "Produk Qty",
       type: "number",
       minWidth: 130,
       flex: 0.7,
@@ -75,7 +75,7 @@ const AllOrders = () => {
       row.push({
         id: item._id,
         itemsQty: item.cart.length,
-        total: "US$ " + item.totalPrice,
+        total: "Rp." + item.totalPrice,
         status: item.status,
       });
     });

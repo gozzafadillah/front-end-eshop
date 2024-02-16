@@ -8,12 +8,29 @@ import {
   HiOutlineCalculator,
   HiOutlineChartSquareBar,
 } from "react-icons/hi";
+import { RxDashboard } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 const MarketingSidebar = ({ active }) => {
   return (
     <div className="w-full h-[90vh] bg-white shadow-sm overflow-y-scroll sticky top-0 left-0 z-10">
       {/* single item */}
+
+      <div className="w-full flex items-center p-4">
+        <Link to="/dashboard" className="w-full flex items-center">
+          <RxDashboard
+            size={30}
+            color={`${active === 1 ? "crimson" : "#555"}`}
+          />
+          <h5
+            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
+              active === 1 ? "text-[crimson]" : "text-[#555]"
+            }`}
+          >
+            Dashboard
+          </h5>
+        </Link>
+      </div>
 
       <div className="w-full flex items-center p-4">
         <Link to="/data-kriteria" className="w-full flex items-center">
@@ -111,7 +128,7 @@ const MarketingSidebar = ({ active }) => {
       </div>
 
       <div className="w-full flex items-center p-4">
-        <Link to="/profile" className="w-full flex items-center">
+        <Link to="/settings" className="w-full flex items-center">
           <AiOutlineSetting
             size={30}
             color={`${active === 8 ? "crimson" : "#555"}`}
