@@ -3,11 +3,10 @@ import { AiOutlineFolderAdd, AiOutlineGift } from "react-icons/ai";
 import { FiPackage, FiShoppingBag } from "react-icons/fi";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
-import { VscNewFile } from "react-icons/vsc";
+import { VscNewFile, VscTools } from "react-icons/vsc";
 import { CiMoneyBill, CiSettings } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { BiMessageSquareDetail } from "react-icons/bi";
-import { HiOutlineReceiptRefund } from "react-icons/hi";
 
 const DashboardSideBar = ({ active }) => {
   return (
@@ -30,6 +29,19 @@ const DashboardSideBar = ({ active }) => {
       </div>
 
       <div className="w-full flex items-center p-4">
+        <Link to="/data-kriteria" className="w-full flex items-center">
+          <VscTools size={30} color={`${active === 0 ? "crimson" : "#555"}`} />
+          <h5
+            className={`hidden 800px:block pl-2 text-[18px] font-[400] ${
+              active === 0 ? "text-[crimson]" : "text-[#555]"
+            }`}
+          >
+            Alat Marketing
+          </h5>
+        </Link>
+      </div>
+
+      <div className="w-full flex items-center p-4">
         <Link to="/dashboard-orders" className="w-full flex items-center">
           <FiShoppingBag
             size={30}
@@ -40,7 +52,7 @@ const DashboardSideBar = ({ active }) => {
               active === 2 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Orders
+            Semua Pesanan
           </h5>
         </Link>
       </div>
@@ -53,7 +65,7 @@ const DashboardSideBar = ({ active }) => {
               active === 3 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Products
+            Semua Produk
           </h5>
         </Link>
       </div>
@@ -72,7 +84,7 @@ const DashboardSideBar = ({ active }) => {
               active === 4 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Create Product
+            Membuat Produk
           </h5>
         </Link>
       </div>
@@ -88,7 +100,7 @@ const DashboardSideBar = ({ active }) => {
               active === 5 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            All Events
+            Semua Promo
           </h5>
         </Link>
       </div>
@@ -104,12 +116,12 @@ const DashboardSideBar = ({ active }) => {
               active === 6 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Create Event
+            Membuat Promo
           </h5>
         </Link>
       </div>
 
-      <div className="w-full flex items-center p-4">
+      {/* <div className="w-full flex items-center p-4">
         <Link to="/dashboard-messages" className="w-full flex items-center">
           <BiMessageSquareDetail
             size={30}
@@ -123,7 +135,7 @@ const DashboardSideBar = ({ active }) => {
             Shop Inbox
           </h5>
         </Link>
-      </div>
+      </div> */}
 
       <div className="w-full flex items-center p-4">
         <Link to="/dashboard-coupouns" className="w-full flex items-center">
@@ -136,7 +148,7 @@ const DashboardSideBar = ({ active }) => {
               active === 9 ? "text-[crimson]" : "text-[#555]"
             }`}
           >
-            Discount Codes
+            Diskon Code
           </h5>
         </Link>
       </div>
