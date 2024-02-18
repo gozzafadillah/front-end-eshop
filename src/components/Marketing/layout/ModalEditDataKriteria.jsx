@@ -58,14 +58,14 @@ const ModalEditDataKriteria = ({ loading, setLoading, id }) => {
       <Button
         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
         onClick={() => {
-          document.getElementById("my_modal_edit").showModal();
+          document.getElementById(`my_modal_edit_${id}`).showModal();
           getData(id);
         }}
       >
         <BiPencil />
       </Button>
 
-      <dialog id="my_modal_edit" className="modal w-[35vw]">
+      <dialog id={`my_modal_edit_${id}`} className="modal w-[35vw]">
         <div className="modal-box">
           <h3 className="font-bold text-lg">Tambah Data Kriteria</h3>
           <form>
@@ -133,7 +133,7 @@ const ModalEditDataKriteria = ({ loading, setLoading, id }) => {
                 className="inline-block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                 onClick={(e) => {
                   handleSubmit(e);
-                  document.getElementById("my_modal_edit").close();
+                  document.getElementById(`my_modal_edit_${id}`).close();
                   onReset();
                 }}
               >
