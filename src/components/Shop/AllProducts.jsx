@@ -7,16 +7,17 @@ import { Link } from "react-router-dom";
 import { getAllProductsShop } from "../../redux/actions/product";
 import { deleteProduct } from "../../redux/actions/product";
 import Loader from "../Layout/Loader";
+import ModalProduct from "../Product/ModalProduct";
 
 const AllProducts = () => {
   const { products, isLoading } = useSelector((state) => state.products);
   const { seller } = useSelector((state) => state.seller);
-
+  const [loading, setLoading] = React.useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllProductsShop(seller._id));
-  }, [dispatch]);
+  }, [dispatch, loading, seller._id]);
 
   const handleDelete = (id) => {
     dispatch(deleteProduct(id));
@@ -72,7 +73,7 @@ const AllProducts = () => {
       },
     },
     {
-      field: "Delete",
+      field: "Action",
       flex: 0.8,
       minWidth: 120,
       headerName: "",
@@ -81,6 +82,11 @@ const AllProducts = () => {
       renderCell: (params) => {
         return (
           <>
+            <ModalProduct
+              id={params.id}
+              loading={loading}
+              setLoading={setLoading}
+            />
             <Button onClick={() => handleDelete(params.id)}>
               <AiOutlineDelete size={20} />
             </Button>
@@ -105,7 +111,7 @@ const AllProducts = () => {
 
   return (
     <>
-      {isLoading ? (
+      {isLoading && !loading ? (
         <Loader />
       ) : (
         <div className="w-full mx-8 pt-1 mt-10 bg-white">

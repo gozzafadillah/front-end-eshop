@@ -8,6 +8,7 @@ import axios from "axios";
 import { BsTrash } from "react-icons/bs";
 import { server } from "../../server";
 import { toast } from "react-toastify";
+import ModalEditSub from "./layout/ModalEditSub";
 
 const SubKriteria = () => {
   const [data, setData] = React.useState([]);
@@ -84,6 +85,12 @@ const SubKriteria = () => {
       renderCell: (params) => {
         return (
           <>
+            <ModalEditSub
+              loading={loading}
+              setLoading={setLoading}
+              parent={params.row.sub_id_parent}
+              child={params.row.sub_id_child}
+            />
             <Button
               onClick={() =>
                 handleDelete(params.row.sub_id_parent, params.row.sub_id_child)

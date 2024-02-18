@@ -8,6 +8,7 @@ import axios from "axios";
 import { BsTrash } from "react-icons/bs";
 import { toast } from "react-toastify";
 import { server } from "../../server";
+import ModalEditDataKriteria from "./layout/ModalEditDataKriteria";
 
 const DataKriteria = () => {
   const [data, setData] = useState([]);
@@ -66,7 +67,7 @@ const DataKriteria = () => {
       flex: 0.6,
     },
     {
-      field: "Preview",
+      field: "Action",
       flex: 0.8,
       minWidth: 100,
       headerName: "",
@@ -74,6 +75,11 @@ const DataKriteria = () => {
       renderCell: (params) => {
         return (
           <>
+            <ModalEditDataKriteria
+              loading={loading}
+              setLoading={setLoading}
+              id={params.id}
+            />
             <Button
               onClick={() => {
                 onDelete(params.id);

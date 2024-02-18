@@ -97,20 +97,36 @@ const App = () => {
             />
             <Route
               path="/data-penilaian"
-              element={<MarketingDataPenilaian />}
+              element={
+                <SellerProtectedRoute>
+                  <MarketingDataPenilaian />
+                </SellerProtectedRoute>
+              }
             />
             <Route
               path="/data-alternatif"
-              element={<MarketingDataAlternatif />}
+              element={
+                <SellerProtectedRoute>
+                  <MarketingDataAlternatif />
+                </SellerProtectedRoute>
+              }
             />
             <Route
               path="/data-perhitungan"
-              element={<MarketingDataPerhitungan />}
+              element={
+                <SellerProtectedRoute>
+                  <MarketingDataPerhitungan />
+                </SellerProtectedRoute>
+              }
             />
 
             <Route
               path="/data-hasil-akhir"
-              element={<MarketingDataHasilAkhir />}
+              element={
+                <SellerProtectedRoute>
+                  <MarketingDataHasilAkhir />
+                </SellerProtectedRoute>
+              }
             />
 
             <Route

@@ -8,6 +8,7 @@ import { server } from "../../server";
 import ModalAlternatif from "./layout/ModalAlternatif";
 import { toast } from "react-toastify";
 import { BiTrash } from "react-icons/bi";
+import ModalEditAlternatif from "./layout/ModalEditAlternatif";
 
 const DataAlternatif = () => {
   const [data, setData] = React.useState([]);
@@ -69,6 +70,11 @@ const DataAlternatif = () => {
       renderCell: (params) => {
         return (
           <>
+            <ModalEditAlternatif
+              loading={loading}
+              setLoading={setLoading}
+              id={params.id}
+            />
             <Button onClick={() => handlerDelete(params.id)}>
               <BiTrash size={20} />
             </Button>
